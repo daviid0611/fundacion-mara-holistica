@@ -1,0 +1,15 @@
+# Configuración de despliegue en Netlify
+# Sitio estático: no requiere compilación, se publica la raíz del repositorio.
+
+[build]
+  publish = "."
+  command = ""
+
+# Encabezados de seguridad aplicados a todas las páginas.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
