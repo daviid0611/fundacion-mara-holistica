@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Haz tu donación a la Fundación Mara Holística a través de Nequi. Tu aporte sostiene nuestros talleres y programas sociales." />
+  <title>Donar — Fundación Mara Holística</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVEGACIÓN ===== -->
+  <header class="navbar scrolled" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Fundación Mara Holística" class="brand-logo" />
+        <span class="brand-text">Fundación <strong>Mara Holística</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#nosotros">Quiénes somos</a>
+        <a href="index.html#servicios">Programas</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ENCABEZADO DE DONACIÓN ===== -->
+  <section class="donate-hero">
+    <div class="donate-hero-overlay"></div>
+    <div class="container donate-hero-content">
+      <p class="hero-eyebrow">Tu ayuda transforma vidas</p>
+      <h1>Haz tu donación 💜</h1>
+      <p class="donate-hero-sub">
+        Con tu aporte sostenemos talleres, programas educativos y ayuda social
+        para las comunidades que más lo necesitan. ¡Gracias por ser parte!
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CONTENIDO DE DONACIÓN ===== -->
+  <section class="section">
+    <div class="container donate-wrap">
+
+      <!-- Tarjeta principal: Nequi -->
+      <div class="donate-card">
+        <div class="nequi-badge">Donar con Nequi</div>
+        <h2>Escanea o copia el número</h2>
+        <p class="donate-card-lead">Abre tu app de Nequi, escanea el código QR o envía a este número.</p>
+
+        <div class="qr-zone">
+          <!-- Reemplaza "nequi-qr.png" por la captura de TU código QR de Nequi.
+               (En la app: Inicio → Recibir pagos / Mi QR → Compartir o Descargar) -->
+          <img src="nequi-qr.png" alt="Código QR de Nequi - Fundación Mara Holística"
+               class="qr-img"
+               onerror="this.style.display='none'; document.getElementById('qrFallback').style.display='flex';" />
+
+          <div class="qr-fallback" id="qrFallback" style="display:none;">
+            <span class="qr-fallback-icon">📲</span>
+            <p><strong>Falta tu código QR de Nequi.</strong></p>
+            <p>Guárdalo desde la app de Nequi como <code>nequi-qr.png</code> en esta carpeta y aparecerá aquí.</p>
+          </div>
+        </div>
+
+        <div class="nequi-number">
+          <span class="nequi-number-label">Número Nequi</span>
+          <span class="nequi-number-value">319 503 4730</span>
+        </div>
+
+        <button class="btn btn-primary btn-block" data-copy="3195034730">Copiar número 📋</button>
+
+        <a class="btn btn-gold btn-block" href="https://wa.me/573195034730?text=%C2%A1Hola!%20Acabo%20de%20hacer%20una%20donaci%C3%B3n%20a%20la%20Fundaci%C3%B3n%20Mara%20Hol%C3%ADstica%20%F0%9F%92%9C"
+           target="_blank" rel="noopener">Avisar de mi donación por WhatsApp 💬</a>
+      </div>
+
+      <!-- Tarjeta secundaria: pasos + impacto -->
+      <div class="donate-side">
+        <div class="steps-card">
+          <h3>¿Cómo donar?</h3>
+          <ol class="steps">
+            <li>Abre tu app <strong>Nequi</strong>.</li>
+            <li>Escanea el <strong>código QR</strong> o elige “Enviar” y pega el <strong>número</strong>.</li>
+            <li>Escribe el monto que desees aportar. 💜</li>
+            <li>¡Listo! Si quieres, avísanos por WhatsApp para agradecerte.</li>
+          </ol>
+        </div>
+
+        <div class="impact-card">
+          <h3>Tu aporte hace la diferencia</h3>
+          <ul class="impact-list">
+            <li><span>📚</span> Materiales para un taller educativo</li>
+            <li><span>🧘</span> Una sesión de bienestar para la comunidad</li>
+            <li><span>🤝</span> Apoyo a una familia en situación vulnerable</li>
+          </ul>
+          <p class="impact-note">Cada peso cuenta. ¡Gracias por tu generosidad! 🌿</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container donate-back">
+      <a href="index.html" class="btn btn-ghost-dark">← Volver al inicio</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="logo.png" alt="Fundación Mara Holística" class="footer-logo" />
+      <p class="footer-brand">Fundación Mara Holística</p>
+      <p class="footer-copy">© <span id="year"></span> Fundación Mara Holística. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
