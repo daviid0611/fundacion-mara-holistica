@@ -1,25 +1,19 @@
-/* =========================================================
-   FUNDACIÓN MARA HOLÍSTICA — Hoja de estilos
-   Colores provisionales (cámbialos por los de tu marca):
-   --verde, --verde-osc, --dorado, --crema, --tierra
-   ========================================================= */
+/* Fundación Mara Holística — Estilos. Paleta basada en el logo de la marca. */
 
 :root {
-  /* Paleta tomada del logo de Fundación Mara Holística */
-  --morado:     #a4498f;   /* magenta de las manos y la flor (color principal) */
-  --morado-osc: #6e2566;   /* morado profundo (hojas oscuras / acentos) */
-  --menta:      #57c79a;   /* verde menta de las hojas */
+  --morado:     #a4498f;
+  --morado-osc: #6e2566;
+  --menta:      #57c79a;
   --menta-osc:  #3da77e;
-  --azul:       #1f2f6b;   /* azul marino del círculo (texto / oscuro) */
-  --dorado:     #d08a3e;   /* ocre dorado del texto del logo (acento) */
+  --azul:       #1f2f6b;
+  --dorado:     #d08a3e;
   --dorado-osc: #b4732e;
-  --crema:      #f5f1e6;   /* fondo crema del logo */
-  --tierra:     #5a4a5a;   /* texto cálido */
+  --crema:      #f5f1e6;
+  --tierra:     #5a4a5a;
   --texto:      #2a2336;
   --gris:       #6f6877;
-  --blanco:     #ffffff;
 
-  /* Alias para no tener que renombrar todo el resto del CSS */
+  /* Alias usados por el resto de la hoja */
   --verde:      var(--morado);
   --verde-osc:  var(--azul);
 
@@ -33,7 +27,7 @@
   --sans:  "Nunito Sans", system-ui, -apple-system, sans-serif;
 }
 
-/* ===== Reset básico ===== */
+/* ===== Base ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
@@ -48,8 +42,6 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 .container { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
-
-/* ===== Tipografía de títulos ===== */
 h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verde-osc); font-weight: 600; }
 
 /* ===== Botones ===== */
@@ -68,6 +60,8 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .btn-primary:hover { background: var(--verde-osc); }
 .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
 .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+.btn-ghost-dark { background: transparent; color: var(--morado); border-color: var(--morado); }
+.btn-ghost-dark:hover { background: var(--morado); color: #fff; }
 .btn-gold { background: var(--dorado); color: #fff; }
 .btn-gold:hover { background: var(--dorado-osc); }
 .btn-block { display: block; width: 100%; text-align: center; }
@@ -82,26 +76,8 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .navbar.scrolled { box-shadow: var(--sombra-sm); background: rgba(247, 244, 236, 0.97); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: 0.6rem; font-family: var(--serif); font-size: 1.25rem; }
-.brand-mark { font-size: 1.5rem; }
 .brand-text strong { color: var(--verde); }
 .brand-logo { height: 52px; width: auto; }
-
-/* Logo grande del hero */
-.hero-logo {
-  height: 150px; width: auto; margin: 0 auto 1.5rem;
-  background: var(--crema);
-  border-radius: 50%;
-  padding: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-/* Logo del footer */
-.footer-logo {
-  height: 70px; width: auto; margin: 0 auto 0.8rem;
-  background: var(--crema);
-  border-radius: 50%;
-  padding: 6px;
-}
 
 .nav-links { display: flex; align-items: center; gap: 1.8rem; }
 .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--tierra); transition: color var(--transicion); }
@@ -129,6 +105,11 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
     radial-gradient(circle at 82% 72%, rgba(87,199,154,0.28), transparent 45%);
 }
 .hero-content { position: relative; z-index: 2; padding: 6rem 0; }
+.hero-logo {
+  height: 150px; width: auto; margin: 0 auto 1.5rem;
+  background: var(--crema); border-radius: 50%; padding: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
 .hero-eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; font-weight: 700; color: var(--dorado); margin-bottom: 1rem; }
 .hero-title { font-size: clamp(2.4rem, 6vw, 4.2rem); color: #fff; margin-bottom: 1.3rem; }
 .hero-subtitle { max-width: 640px; margin: 0 auto 2.2rem; font-size: 1.1rem; color: rgba(255,255,255,0.92); }
@@ -144,7 +125,7 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .section-head h2 { font-size: clamp(2rem, 4vw, 2.9rem); margin: 0.6rem 0 1rem; }
 .section-lead { color: var(--gris); font-size: 1.08rem; }
 
-/* ===== Pilares (misión/visión/valores) ===== */
+/* ===== Pilares (misión / visión / valores) ===== */
 .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin-bottom: 4rem; }
 .pillar { background: #fff; border-radius: var(--radio); padding: 2.2rem; text-align: center; box-shadow: var(--sombra); transition: transform var(--transicion); }
 .pillar:hover { transform: translateY(-6px); }
@@ -197,6 +178,7 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
   border-radius: 10px; font-family: var(--sans); font-size: 1rem; transition: border var(--transicion);
 }
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--verde); }
+.form-or { text-align: center; color: var(--gris); margin: 0.6rem 0; font-size: 0.9rem; }
 .form-note { margin-top: 0.8rem; font-weight: 600; min-height: 1.2em; }
 .form-note.ok { color: var(--verde); }
 .form-note.err { color: #c0392b; }
@@ -214,6 +196,7 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 /* ===== Footer ===== */
 .footer { background: var(--verde-osc); color: rgba(255,255,255,0.9); padding: 2.5rem 0; }
 .footer-inner { text-align: center; }
+.footer-logo { height: 70px; width: auto; margin: 0 auto 0.8rem; background: var(--crema); border-radius: 50%; padding: 6px; }
 .footer-brand { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.4rem; }
 .footer-copy { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
 
@@ -221,19 +204,10 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ===== Botón fantasma sobre fondo claro ===== */
-.btn-ghost-dark { background: transparent; color: var(--morado); border-color: var(--morado); }
-.btn-ghost-dark:hover { background: var(--morado); color: #fff; }
-
-/* Separador "o" del formulario */
-.form-or { text-align: center; color: var(--gris); margin: 0.6rem 0; font-size: 0.9rem; }
-
-/* =========================================================
-   PÁGINA DE DONACIONES
-   ========================================================= */
+/* ===== Página de donaciones ===== */
 .donate-hero {
   position: relative;
-  margin-top: 72px;            /* deja espacio bajo la navbar fija */
+  margin-top: 72px;
   padding: 4.5rem 0;
   text-align: center;
   color: #fff;
@@ -250,14 +224,8 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .donate-hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0.5rem 0 1rem; }
 .donate-hero-sub { max-width: 620px; margin: 0 auto; color: rgba(255,255,255,0.92); font-size: 1.08rem; }
 
-.donate-wrap {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
-  align-items: start;
-}
+.donate-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: start; }
 
-/* Tarjeta principal Nequi */
 .donate-card {
   background: #fff;
   border-radius: var(--radio);
@@ -300,19 +268,13 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .qr-fallback-icon { font-size: 2.5rem; }
 .qr-fallback code { background: #fff; padding: 2px 6px; border-radius: 6px; color: var(--morado-osc); font-weight: 700; }
 
-.nequi-number {
-  background: var(--crema);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1.2rem;
-}
+.nequi-number { background: var(--crema); border-radius: 12px; padding: 1rem; margin-bottom: 1.2rem; }
 .nequi-number-label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gris); }
 .nequi-number-value { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--morado-osc); letter-spacing: 1px; }
 
 .donate-card .btn { margin-bottom: 0.8rem; }
 .btn.copied { background: var(--menta-osc) !important; }
 
-/* Columna lateral */
 .steps-card, .impact-card {
   background: #fff;
   border-radius: var(--radio);
