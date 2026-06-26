@@ -401,3 +401,19 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
+
+/* Compactar en móvil para que la página no quede tan extensa */
+@media (max-width: 600px) {
+  .section { padding: 3.5rem 0; }
+  .hero-content { padding: 4.5rem 0; }
+  .section-head { margin-bottom: 2rem; }
+  .pillars, .cards { gap: 1rem; margin-bottom: 2.5rem; }
+  .pillar, .card { padding: 1.6rem; }
+  .stats { gap: 1rem; }
+
+  /* Galería: 2 columnas y solo 4 fotos por bloque (el resto en la galería completa) */
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .gallery-group { margin-bottom: 1.8rem; }
+  .gallery-cta { margin-bottom: 2.5rem; }
+  #galeria .gallery .gallery-item:nth-child(n+5) { display: none; }
+}
