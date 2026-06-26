@@ -48,7 +48,7 @@ def optimizar_categoria(carpeta_origen, carpeta_destino, prefijo):
 
     # Borra salidas previas generadas (para re-ejecutar limpio)
     for f in os.listdir(dst):
-        if re.fullmatch(rf"{prefijo}-\d+\.jpg", f):
+        if re.fullmatch(rf"{prefijo}-\d+\.(jpg|webp)", f):
             os.remove(os.path.join(dst, f))
 
     archivos = [f for f in os.listdir(src)
@@ -71,8 +71,14 @@ def optimizar_categoria(carpeta_origen, carpeta_destino, prefijo):
         n += 1
         salida = os.path.join(dst, f"{prefijo}-{n}.jpg")
         img.save(salida, "JPEG", quality=CALIDAD, optimize=True, progressive=True)
+
+        # Version WebP (mas ligera) como alternativa moderna
+        salida_webp = os.path.join(dst, f"{prefijo}-{n}.webp")
+        img.save(salida_webp, "WEBP", quality=CALIDAD, method=6)
+
         kb = os.path.getsize(salida) // 1024
-        print(f"  {f}  ->  {prefijo}-{n}.jpg  ({kb} KB)")
+        kb_webp = os.path.getsize(salida_webp) // 1024
+        print(f"  {f}  ->  {prefijo}-{n}.jpg ({kb} KB) + .webp ({kb_webp} KB)")
 
     return n
 

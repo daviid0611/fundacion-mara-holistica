@@ -91,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
       note.className = 'form-note err';
       return null;
     }
+    if (form.consent && !form.consent.checked) {
+      note.textContent = 'Debes autorizar el tratamiento de datos para continuar.';
+      note.className = 'form-note err';
+      return null;
+    }
     return { nombre, email, mensaje };
   }
 
@@ -192,5 +197,38 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
     });
   });
+
+  // Enlace a la política de datos en el pie (en todas las páginas)
+  const footerInner = document.querySelector('.footer-inner');
+  if (footerInner && !footerInner.querySelector('.footer-legal')) {
+    const legal = document.createElement('p');
+    legal.className = 'footer-legal';
+    legal.innerHTML = '<a href="privacidad.html">Política de Tratamiento de Datos</a>';
+    footerInner.appendChild(legal);
+  }
+
+  // Botón flotante de WhatsApp (en todas las páginas)
+  if (!document.querySelector('.wa-float')) {
+    const wa = document.createElement('a');
+    wa.className = 'wa-float';
+    wa.href = 'https://wa.me/573115956597?text=' +
+      encodeURIComponent('¡Hola! Quiero más información sobre la Fundación Mara Holística 🌿');
+    wa.target = '_blank';
+    wa.rel = 'noopener';
+    wa.setAttribute('aria-label', 'Escríbenos por WhatsApp');
+    wa.textContent = '💬';
+    document.body.appendChild(wa);
+  }
+
+  // Cloudflare Web Analytics (sin cookies).
+  // Reemplaza TOKEN_DE_CLOUDFLARE por el token real de tu panel de Cloudflare.
+  const CF_TOKEN = 'TOKEN_DE_CLOUDFLARE';
+  if (CF_TOKEN && CF_TOKEN !== 'TOKEN_DE_CLOUDFLARE') {
+    const cf = document.createElement('script');
+    cf.defer = true;
+    cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    cf.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_TOKEN }));
+    document.body.appendChild(cf);
+  }
 
 });

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /fotos/originales/
+
+Sitemap: https://fundacionmaraholistica.org/sitemap.xml
