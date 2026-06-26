@@ -150,16 +150,49 @@ h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; color: var(--verd
 .card p { color: var(--gris); }
 
 /* ===== Galería ===== */
-.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 4rem; }
+.gallery-group { margin-bottom: 2.5rem; }
+.gallery-subtitle {
+  font-family: var(--serif); font-size: 1.6rem; color: var(--morado-osc);
+  margin-bottom: 1.2rem;
+}
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
 .gallery-item {
   aspect-ratio: 4 / 3;
   background: linear-gradient(135deg, #dfe9e0, #cdddd0);
   border-radius: var(--radio);
+  overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   color: var(--verde-osc); font-weight: 600; font-size: 1.05rem;
-  transition: transform var(--transicion);
+  transition: transform var(--transicion), box-shadow var(--transicion);
 }
-.gallery-item:hover { transform: scale(1.03); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-item:hover { transform: scale(1.03); box-shadow: var(--sombra); }
+.gallery-cta { text-align: center; margin-bottom: 4rem; }
+
+/* ===== Lightbox (foto ampliada) ===== */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(20, 12, 24, 0.92);
+  display: none; align-items: center; justify-content: center;
+  padding: 2rem;
+  animation: lb-fade 0.2s ease;
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: 92vw; max-height: 88vh;
+  border-radius: var(--radio);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1.5rem;
+  width: 3rem; height: 3rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: none; border-radius: 50%;
+  color: #fff; font-size: 2rem; line-height: 1;
+  cursor: pointer; transition: background var(--transicion);
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.28); }
+@keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
 
 /* ===== Testimonios ===== */
 .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }

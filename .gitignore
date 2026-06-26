@@ -13,3 +13,6 @@ desktop.ini
 
 # Dependencias (por si en el futuro usas Node)
 node_modules/
+
+# Fotos originales sin optimizar (solo se suben las versiones ligeras)
+fotos/originales/

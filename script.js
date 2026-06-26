@@ -131,6 +131,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Lightbox: ver la foto de la galería en grande al hacer clic
+  const galleryLinks = document.querySelectorAll('.gallery-item');
+  if (galleryLinks.length) {
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.innerHTML =
+      '<button class="lightbox-close" aria-label="Cerrar">&times;</button>' +
+      '<img class="lightbox-img" alt="" />';
+    document.body.appendChild(lb);
+
+    const lbImg = lb.querySelector('.lightbox-img');
+    const closeBtn = lb.querySelector('.lightbox-close');
+
+    const abrir = (src, alt) => {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const cerrar = () => {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.removeAttribute('src');
+    };
+
+    galleryLinks.forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const img = a.querySelector('img');
+        abrir(a.getAttribute('href'), img ? img.alt : '');
+      });
+    });
+
+    closeBtn.addEventListener('click', cerrar);
+    lb.addEventListener('click', (e) => { if (e.target === lb) cerrar(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('open')) cerrar();
+    });
+  }
+
   // Botones "copiar al portapapeles" (página de donaciones)
   document.querySelectorAll('[data-copy]').forEach(btn => {
     btn.addEventListener('click', async () => {
