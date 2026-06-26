@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Configuración: número de WhatsApp y correo donde llegan los mensajes.
-  const WHATSAPP_NUMERO = '573195034730';
-  const CORREO_DESTINO  = 'hola@maraholistica.org';
+  const WHATSAPP_NUMERO = '573115956597';
+  const CORREO_DESTINO  = 'fundacionmaraholistica@gmail.com';
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

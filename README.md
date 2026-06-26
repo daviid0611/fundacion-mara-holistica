@@ -1,7 +1,8 @@
 # Fundación Mara Holística — Sitio web
 
 Sitio web de una sola página (one-page) para la Fundación Mara Holística.
-Enfocado en **educación, talleres y ayuda social**, con secciones de Inicio,
+Enfocado en **bienestar emocional y salud mental** mediante arteterapia y mindfulness,
+con foco en madres cabeza de hogar de la Sabana de Bogotá. Incluye secciones de Inicio,
 Quiénes somos, Programas, Galería/Testimonios y Contacto/Donaciones.
 
 ## Archivos
@@ -27,9 +28,11 @@ Coloca tu archivo `logo.png` en esta misma carpeta.
 ### 2. Colores de la marca
 En `styles.css`, al inicio (sección `:root`), cambia estos valores por los tuyos:
 ```css
---verde:     #5a8a6a;   /* color principal */
---verde-osc: #3a5d47;   /* color oscuro */
---dorado:    #c8a560;   /* color de acento */
+--morado: #a4498f;   /* color principal */
+--menta:  #57c79a;   /* color secundario */
+--azul:   #1f2f6b;   /* color oscuro */
+--dorado: #d08a3e;   /* color de acento */
+--crema:  #f5f1e6;   /* fondo */
 ```
 
 ### 3. Textos
